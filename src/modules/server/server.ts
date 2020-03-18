@@ -20,7 +20,7 @@ export class Server {
         StatisticsApi.init(this.app);
     }
 
-    static listenOnPort(app: Application, port:string) {
+    static listenOnPort(app: Application, port: string) {
         return app.listen(port, () => {
             // tslint:disable-next-line:no-console
             console.log(`server started at http://localhost:${port}`);
