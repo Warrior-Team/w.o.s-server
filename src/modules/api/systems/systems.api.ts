@@ -9,7 +9,7 @@ export class SystemsApi {
 
     static async getSystems(req: Request, res: Response) {
         let reality = req.headers.reality;
-        let result = await DbConnector.query(`SELECT * FROM reality${reality}.servers`);
+        let result = await DbConnector.query(`SELECT id, name, team, details, icon, "isAlive", to_char("lastAlive", 'HH24:MI:SS DD/MM/YYYY') as "lastAlive" FROM reality${reality}.servers`);
         console.log('Incoming request - Get All systems, Reality:', reality);
         res.send(result.rows);
     }

@@ -4,7 +4,6 @@ import {SystemsApi} from '../api/systems/systems.api';
 import {DbConnector} from '../db/db-connector';
 import {RealitiesApi} from '../api/realities/realities.api';
 import {StatisticsApi} from '../api/statistics/statistics.api';
-import {SocketsManager} from '../sockets-manager/sockets-manager';
 
 
 export class Server {
@@ -13,19 +12,18 @@ export class Server {
 
     static init() {
         this.app = express();
-        let server = this.listenOnPort(this.app);
+        this.listenOnPort(this.app, this.port);
         this.defineDefaultRoutes(this.app);
         DbConnector.init();
-        SocketsManager.init(server);
         SystemsApi.init(this.app);
         RealitiesApi.init(this.app);
         StatisticsApi.init(this.app);
     }
 
-    static listenOnPort(app: Application) {
-        return app.listen(this.port, () => {
+    static listenOnPort(app: Application, port:string) {
+        return app.listen(port, () => {
             // tslint:disable-next-line:no-console
-            console.log(`server started at http://localhost:${Server.port}`);
+            console.log(`server started at http://localhost:${port}`);
         });
     }
 
