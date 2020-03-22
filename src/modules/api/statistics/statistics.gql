@@ -1,0 +1,17 @@
+type Person {
+  reality: Int
+  serverId: Int
+}
+
+input shirel {
+  reality: Int
+  serverId: Int
+}
+
+extend type Query {
+    getStats(shirel): [Person]
+}
+
+
+
+

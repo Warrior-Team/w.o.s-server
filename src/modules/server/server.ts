@@ -2,8 +2,8 @@ import express, {Application} from 'express';
 import bodyParser from 'body-parser';
 import {SystemsApi} from '../api/systems/systems.api';
 import {DbConnector} from '../db/db-connector';
-import {RealitiesApi} from '../api/realities/realities.api';
-import {StatisticsApi} from '../api/statistics/statistics.api';
+import {RealitiesApi} from '../api/realitiesOld/realities.api';
+import {StatisticsApi} from '../api/statisticsOld/statistics.api';
 
 
 export class Server {
