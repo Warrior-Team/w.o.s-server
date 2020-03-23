@@ -7,8 +7,10 @@ const statisticsConnector = new StatisticsConnector();
 
 export const resolvers = {
     Query: {
-        getStats(req: any) {
-       return statisticsConnector.getStats(req);
-    }
+        getStats(parent: any, args: any, context: any) {
+
+            return statisticsConnector.getStats(args.statsInfoInput);
+        }
+    
     }
 }

@@ -1,0 +1,13 @@
+type System {
+  id: Int
+  name: String
+  team: String
+  details: String
+  icon: String
+  isAlive: Boolean
+  lastAlive: Int
+}
+
+extend type Query {
+  getSystems(reality: Int): [System]
+}

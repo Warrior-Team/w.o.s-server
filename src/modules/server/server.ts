@@ -1,6 +1,6 @@
 import express, {Application} from 'express';
 import bodyParser from 'body-parser';
-import {SystemsApi} from '../api/systems/systems.api';
+import {SystemsApi} from '../api/systemsOld/systems.api';
 import {DbConnector} from '../db/db-connector';
 import {RealitiesApi} from '../api/realitiesOld/realities.api';
 import {StatisticsApi} from '../api/statisticsOld/statistics.api';

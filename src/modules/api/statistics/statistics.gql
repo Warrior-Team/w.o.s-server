@@ -1,17 +1,18 @@
-type Person {
-  reality: Int
+type StatsInfo {
   serverId: Int
+  stats: [Stats]
 }
 
-input shirel {
+type Stats {
+  duration_ms: Int
+  request_time: String
+}
+
+input StatsInfoInput {
   reality: Int
   serverId: Int
 }
 
 extend type Query {
-    getStats(shirel): [Person]
+    getStats(statsInfoInput: StatsInfoInput): StatsInfo
 }
-
-
-
-
