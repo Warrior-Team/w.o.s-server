@@ -15,6 +15,7 @@
   "author": "michal",
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.6",
     "@types/lodash": "^4.14.149",
     "@types/pg": "^7.14.3",
     "apollo-server": "^2.11.0",

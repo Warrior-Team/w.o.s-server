@@ -4,14 +4,13 @@
 
 import {DbConnector} from '../src/modules/db/db-connector';
 import {resolvers as rootResolvers, typeDefs as rootTypeDefs} from '../src/modules/api/root/root.schema';
-
-const express = require('express');
-const bodyParser = require('body-parser');
-const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
-const { makeExecutableSchema } = require('graphql-tools');
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
+import { makeExecutableSchema } from 'graphql-tools';
 
 DbConnector.init();
-
 
 // The GraphQL schema in string form
 const typeDefs = rootTypeDefs;
@@ -27,6 +26,8 @@ const schema = makeExecutableSchema({
 
 // Initialize the app
 const app = express();
+
+app.use(cors());
 
 // The GraphQL endpoint
 app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
