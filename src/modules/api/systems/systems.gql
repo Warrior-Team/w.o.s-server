@@ -5,9 +5,27 @@ type System {
   details: String
   icon: String
   isAlive: Boolean
-  lastAlive: Int
+  lastAlive: String
+  url: String
+}
+
+input systemInput {
+  id: Int
+  name: String
+  team: String
+  details: String
+  icon: String
+  isAlive: Boolean
+  lastAlive: String
+  url: String
 }
 
 extend type Query {
   getSystems(reality: Int): [System]
+}
+
+extend type Mutation {
+  addSystem(reality: Int, data: systemInput): [System]
+  updateSystem(reality: Int, data: systemInput): [System]
+  removeSystem(reality: Int, id: Int): Int
 }

@@ -1,3 +1,7 @@
 type Query {
     _blank: String
 }
+
+type Mutation {
+    _blank: String
+}

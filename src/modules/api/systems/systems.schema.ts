@@ -10,5 +10,17 @@ export const resolvers = {
         getSystems(parent: any, args: any, context: any) {
             return systemsConnector.getSystems(args.reality);
         }
+    }, 
+
+    Mutation: {
+        addSystem(parent: any, args: any, context: any) {
+            return systemsConnector.addSystem(args.reality, args.data);
+        },
+        updateSystem(parent: any, args: any, context: any) {
+            return systemsConnector.updateSystem(args.reality, args.data);
+        },
+        removeSystem(parent: any, args: any, context: any) {
+            return systemsConnector.removeSystem(args.reality, args.id);
+        }
     }
 }
