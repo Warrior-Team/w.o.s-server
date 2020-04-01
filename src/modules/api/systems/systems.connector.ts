@@ -1,4 +1,5 @@
 import {DbConnector} from '../../db/db-connector';
+import { System } from '../../models/system';
 
 export class SystemsConnector {
 
@@ -8,7 +9,7 @@ export class SystemsConnector {
     return result.rows;
 }
 
-  public async addSystem(reality: number, data: any) {
+  public async addSystem(reality: number, data: System) {
     try {
         let dataAsString = JSON.stringify(data);
         console.log(`Incoming request - adding system with payload: ${dataAsString}`);
@@ -21,7 +22,7 @@ export class SystemsConnector {
     }
   }
 
-  public async updateSystem(reality: number, data: any) {
+  public async updateSystem(reality: number, data: System) {
     try {
         let dataAsString = JSON.stringify(data);
         console.log(`Incoming request - updating system with payload: ${dataAsString}`);

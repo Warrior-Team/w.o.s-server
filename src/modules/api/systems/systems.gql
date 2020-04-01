@@ -9,7 +9,7 @@ type System {
   url: String
 }
 
-input systemInput {
+input SystemInput {
   id: Int
   name: String
   team: String
@@ -25,7 +25,7 @@ extend type Query {
 }
 
 extend type Mutation {
-  addSystem(reality: Int, data: systemInput): [System]
-  updateSystem(reality: Int, data: systemInput): [System]
+  addSystem(reality: Int, data: SystemInput): [System]
+  updateSystem(reality: Int, data: SystemInput): [System]
   removeSystem(reality: Int, id: Int): Int
 }

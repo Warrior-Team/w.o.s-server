@@ -1,11 +1,11 @@
 type Realities {
   warriorReality: Int
-  attackDemands: Int
-  operationalPlans: Int
+  foodDemands: Int
+  plans: Int
   ng: Int
   name: String
 }
 
 extend type Query {
-    getRealities: [Realities]
+  getRealities: [Realities]
 }

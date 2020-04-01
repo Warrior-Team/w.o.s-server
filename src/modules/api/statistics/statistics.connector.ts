@@ -1,8 +1,9 @@
-import {DbConnector} from '../../db/db-connector';
+import { DbConnector } from '../../db/db-connector';
+import { Statistic } from '../../models/statistic';
 
 export class StatisticsConnector{
 
-  public async getStats(statsInfoInput: any) {
+  public async getStats(statsInfoInput: Statistic) {
     
     let serverId = statsInfoInput.serverId;
     let reality = statsInfoInput.reality;
