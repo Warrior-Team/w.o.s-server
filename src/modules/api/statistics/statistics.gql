@@ -1,0 +1,18 @@
+type StatsInfo {
+  serverId: Int
+  stats: [Stats]
+}
+
+type Stats {
+  duration_ms: Int
+  request_time: String
+}
+
+input StatsInfoInput {
+  reality: Int
+  serverId: Int
+}
+
+extend type Query {
+    getStats(statsInfoInput: StatsInfoInput): StatsInfo
+}

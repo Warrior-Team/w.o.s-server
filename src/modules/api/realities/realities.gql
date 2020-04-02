@@ -1,0 +1,11 @@
+type Realities {
+  warriorReality: Int
+  foodDemands: Int
+  plans: Int
+  ng: Int
+  name: String
+}
+
+extend type Query {
+  getRealities: [Realities]
+}
