@@ -7,7 +7,6 @@ export interface System {
     url: string;
     isAlive: boolean;
     lastAlive: string;
-    isGraphOpen?: boolean;
   }
   
   export interface SystemWithStat {
