@@ -7,7 +7,7 @@ export class RealitiesApi {
     }
 
     static async getRealities(req: Request, res: Response) {
-        let result = await DbConnector.query('SELECT * FROM public.realities');
+        let result = await DbConnector.query('SELECT * FROM realities.realities');
         console.log('Incoming request - Get All realities');
         res.send(result.rows);
     }
